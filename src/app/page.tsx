@@ -101,15 +101,23 @@ export default function Home() {
               être mis en ligne.
             </p>
           </div>
-          <div className="rounded-2xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm shadow-sm dark:border-emerald-900/60 dark:bg-emerald-900/20">
-            <p className="font-medium text-emerald-900 dark:text-emerald-100">
-              Prochaine étape pour vous
-            </p>
-            <p className="text-zinc-600 dark:text-zinc-400">
-              Nous listons ensemble les pages clés de votre futur site (accueil,
-              services, à propos, contact) puis nous suivons ici chaque étape
-              jusqu’à la mise en ligne.
-            </p>
+          <div className="flex flex-col items-start gap-3">
+            <div className="rounded-2xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm shadow-sm dark:border-emerald-900/60 dark:bg-emerald-900/20">
+              <p className="font-medium text-emerald-900 dark:text-emerald-100">
+                Prochaine étape pour vous
+              </p>
+              <p className="text-zinc-600 dark:text-zinc-400">
+                Nous listons ensemble les pages clés de votre futur site (accueil,
+                services, à propos, contact) puis nous suivons ici chaque étape
+                jusqu’à la mise en ligne.
+              </p>
+            </div>
+            <a
+              href="/offre"
+              className="inline-flex items-center justify-center rounded-full bg-zinc-900 px-4 py-2 text-xs font-medium text-zinc-50 shadow-sm transition hover:bg-zinc-700 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
+            >
+              Découvrir l’offre site vitrine
+            </a>
           </div>
         </header>
 
