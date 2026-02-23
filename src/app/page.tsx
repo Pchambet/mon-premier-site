@@ -94,7 +94,6 @@ export default function Home() {
               <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
               Studio web freelance
             </div>
-            </p>
             <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
               Un suivi clair pour chaque site que vous créez.
             </h1>
