@@ -90,21 +90,25 @@ export default function Home() {
         <header className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
           <div>
             <p className="text-sm font-medium text-zinc-500 uppercase tracking-[0.18em]">
-              Tableau de bord agence
+              Studio web freelance
             </p>
-            <h1 className="mt-2 text-3xl font-semibold tracking-tight">
-              Suivi de projets clients
+            <h1 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Suivi clair de vos projets de site
             </h1>
             <p className="mt-2 max-w-2xl text-sm text-zinc-600 dark:text-zinc-400">
-              Visualise rapidement les sites en cours, ce qu’il reste à faire
-              avant livraison et montre ce tableau à ton futur client pour lui
-              prouver que tu travailles de façon structurée.
+              En un coup d’œil, voyez où en est la création de votre site&nbsp;:
+              contenu à rédiger, pages en cours d’intégration, éléments prêts à
+              être mis en ligne.
             </p>
           </div>
-          <div className="rounded-2xl border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-            <p className="font-medium">Prochaine étape</p>
+          <div className="rounded-2xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm shadow-sm dark:border-emerald-900/60 dark:bg-emerald-900/20">
+            <p className="font-medium text-emerald-900 dark:text-emerald-100">
+              Prochaine étape pour vous
+            </p>
             <p className="text-zinc-600 dark:text-zinc-400">
-              Ajoute ici les tâches du projet de ton premier client.
+              Nous listons ensemble les pages clés de votre futur site (accueil,
+              services, à propos, contact) puis nous suivons ici chaque étape
+              jusqu’à la mise en ligne.
             </p>
           </div>
         </header>
@@ -116,7 +120,7 @@ export default function Home() {
             </p>
             <p className="mt-2 text-2xl font-semibold">{stats.total}</p>
             <p className="text-xs text-zinc-600 dark:text-zinc-400">
-              Sites suivis dans ce tableau
+              Sites accompagnés en parallèle
             </p>
           </div>
           <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
@@ -125,7 +129,7 @@ export default function Home() {
             </p>
             <p className="mt-2 text-2xl font-semibold">{stats.todo}</p>
             <p className="text-xs text-zinc-600 dark:text-zinc-400">
-              Tâches à démarrer
+              Éléments à lancer (textes, visuels…)
             </p>
           </div>
           <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
@@ -134,7 +138,7 @@ export default function Home() {
             </p>
             <p className="mt-2 text-2xl font-semibold">{stats.inProgress}</p>
             <p className="text-xs text-zinc-600 dark:text-zinc-400">
-              Tâches en production
+              Sections actuellement en design/intégration
             </p>
           </div>
           <div className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
@@ -143,7 +147,7 @@ export default function Home() {
             </p>
             <p className="mt-2 text-2xl font-semibold">{stats.done}</p>
             <p className="text-xs text-zinc-600 dark:text-zinc-400">
-              Prêt à facturer
+              Pages prêtes à être publiées
             </p>
           </div>
         </section>
@@ -152,10 +156,13 @@ export default function Home() {
           <div className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <div className="flex items-center justify-between gap-2">
               <div>
-                <h2 className="text-lg font-semibold">Tâches par client</h2>
+                <h2 className="text-lg font-semibold">
+                  Détails du projet de votre site
+                </h2>
                 <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                  Gère les sections de ton site (hero, contact, blog, etc.) et
-                  suis leur avancement.
+                  Chaque ligne correspond à une section ou une tâche importante
+                  pour votre présence en ligne (page d’accueil, page services,
+                  formulaire de contact, optimisation SEO de base…).
                 </p>
               </div>
             </div>
@@ -168,24 +175,22 @@ export default function Home() {
                 <input
                   value={title}
                   onChange={(event) => setTitle(event.target.value)}
-                  placeholder="Ex: Page d’accueil pour avocat"
+                  placeholder="Ex: Rédiger la page d’accueil"
                   className="h-9 w-full rounded-xl border border-zinc-200 bg-white px-3 text-sm outline-none ring-0 transition focus:border-zinc-400 focus:ring-1 focus:ring-zinc-200 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 dark:focus:border-zinc-600 dark:focus:ring-zinc-800"
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-medium text-zinc-500">
-                  Client
-                </label>
+                <label className="text-xs font-medium text-zinc-500">Client</label>
                 <input
                   value={client}
                   onChange={(event) => setClient(event.target.value)}
-                  placeholder="Nom du client"
+                  placeholder="Nom de l’entreprise ou du client"
                   className="h-9 w-full rounded-xl border border-zinc-200 bg-white px-3 text-sm outline-none ring-0 transition focus:border-zinc-400 focus:ring-1 focus:ring-zinc-200 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50 dark:focus:border-zinc-600 dark:focus:ring-zinc-800"
                 />
               </div>
               <div className="space-y-2">
                 <label className="text-xs font-medium text-zinc-500">
-                  Date cible
+                  Date de mise en ligne visée
                 </label>
                 <input
                   type="date"
@@ -251,8 +256,8 @@ export default function Home() {
 
               {tasks.length === 0 && (
                 <p className="py-6 text-sm text-zinc-500">
-                  Aucune tâche pour le moment. Ajoute une première tâche avec le
-                  formulaire ci-dessus.
+                  Aucune section définie pour l’instant. Commence par ajouter la
+                  page d’accueil, puis les pages services et contact.
                 </p>
               )}
             </div>
@@ -260,26 +265,27 @@ export default function Home() {
 
           <aside className="space-y-4">
             <div className="rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-              <h2 className="text-sm font-semibold">Résumé client</h2>
+              <h2 className="text-sm font-semibold">Résumé de notre façon de travailler</h2>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                Utilise ce texte comme base pour expliquer ton process à un
-                prospect :
+                Voici comment nous gérons typiquement un projet de site vitrine ou
+                de refonte pour une petite entreprise :
               </p>
               <ul className="mt-3 list-disc space-y-1 pl-5 text-xs text-zinc-600 dark:text-zinc-400">
-                <li>Analyse de l’activité et des objectifs.</li>
-                <li>Maquette de la page d’accueil et des pages clés.</li>
-                <li>Intégration responsive et optimisation SEO de base.</li>
-                <li>Livraison et ajustements selon les retours.</li>
+                <li>Analyse de votre activité, de vos offres et de vos objectifs.</li>
+                <li>Proposition de structure de site (navigation, sections, appels à l’action).</li>
+                <li>Maquettes et intégration responsive avec un design moderne.</li>
+                <li>Optimisation technique de base (performances, SEO, formulaires…).</li>
+                <li>Allers-retours jusqu’à validation puis mise en ligne accompagnée.</li>
               </ul>
             </div>
 
             <div className="rounded-3xl border border-zinc-200 bg-white p-5 text-sm shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
-              <h2 className="text-sm font-semibold">Prochaine action concrète</h2>
+              <h2 className="text-sm font-semibold">Prochaine action concrète pour vous</h2>
               <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-                Choisis une personne autour de toi (ami, freelance, commerce
-                local) et remplis ce tableau avec un vrai projet. Tu pourras lui
-                montrer cet écran en rendez-vous pour le rassurer sur ton
-                organisation.
+                Si vous le souhaitez, nous pouvons utiliser ce tableau dès
+                maintenant pour cadrer votre projet&nbsp;: nous listons les pages,
+                les contenus attendus et une date cible réaliste pour la mise en
+                ligne.
               </p>
             </div>
           </aside>
